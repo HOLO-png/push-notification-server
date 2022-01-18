@@ -13,6 +13,10 @@ const keyValue = 'e44ccf1c-86d3-4ced-afe0-ddac4163bd75';
 var fcm = new FCM(serverKey);
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send('Hello world!');
+});
+
 app.post('/notifications', (req, res) => {
     var message = {
         to: req.body.token,
